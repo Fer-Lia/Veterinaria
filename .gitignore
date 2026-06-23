@@ -1,0 +1,32 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Variables de entorno (información sensible)
+.env
+
+# Cache de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PyCharm
+.idea/
+
+# Distribución / empaquetado
+build/
+dist/
+*.egg-info/
+
+# Bases de datos locales (si usaras SQLite en pruebas)
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
