@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -18,6 +17,7 @@ class Cliente(Base):
     email = Column(String(100), unique=True, nullable=True)
     fecha_registro = Column(DateTime(timezone=True), server_default=func.now())
     telefono_secundario = Column(String(15), nullable=True)
+
     mascotas = relationship("Mascota", back_populates="cliente")
 
 
