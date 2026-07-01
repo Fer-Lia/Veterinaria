@@ -17,3 +17,4 @@ class Mascota(Base):
     dni_cliente = Column(String(15), ForeignKey("clientes.dni"), nullable=False)
 
     cliente = relationship("Cliente", back_populates="mascotas")
+    citas = relationship("Cita", back_populates="mascota")
