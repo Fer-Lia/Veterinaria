@@ -21,12 +21,12 @@ def obtener_mascotas(db: Session, skip: int = 0, limit: int = 100) -> list[Masco
     return db.query(Mascota).offset(skip).limit(limit).all()
 
 
-def obtener_mascota_por_id(db: Session, mascota_id: int) -> Mascota | None:
-    return db.query(Mascota).filter(Mascota.id_mascota == mascota_id).first()
+def obtener_mascota_por_id(db: Session, id_mascota: int) -> Mascota | None:
+    return db.query(Mascota).filter(Mascota.id_mascota == id_mascota).first()
 
 
-def actualizar_mascota(db: Session, mascota_id: int, mascota: MascotaUpdate) -> Mascota | None:
-    mascota_existente = obtener_mascota_por_id(db, mascota_id)
+def actualizar_mascota(db: Session, id_mascota: int, mascota: MascotaUpdate) -> Mascota | None:
+    mascota_existente = obtener_mascota_por_id(db, id_mascota)
     if mascota_existente is None:
         return None
 
@@ -39,8 +39,8 @@ def actualizar_mascota(db: Session, mascota_id: int, mascota: MascotaUpdate) -> 
     return mascota_existente
 
 
-def eliminar_mascota(db: Session, mascota_id: int) -> bool:
-    mascota_existente = obtener_mascota_por_id(db, mascota_id)
+def eliminar_mascota(db: Session, id_mascota: int) -> bool:
+    mascota_existente = obtener_mascota_por_id(db, id_mascota)
     if mascota_existente is None:
         return False
 
